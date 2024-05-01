@@ -1,0 +1,13 @@
+<div *ngIf="post$; else loading">
+    <h1>{{ post$.title }}</h1>
+    <p>{{ post$.body }}</p>
+    <div>
+      <strong>Author ID:</strong> {{ post$.userId }}
+      <a [routerLink]="['/userdetails', post$.userId]">View Author Details</a>
+    </div>
+  </div>
+  
+  <ng-template #loading>
+    <p>Lade Post-Daten...</p>
+  </ng-template>
+  
